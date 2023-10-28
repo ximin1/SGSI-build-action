@@ -1,12 +1,16 @@
 name: SGSI_Build
 
 on:
-  watch:
-    types: [started]
+  workflow_dispatch:
+    inputs:
+      START_RUN:
+        description: 'START_RUN'
+        required: true
+        default: 'run'
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
